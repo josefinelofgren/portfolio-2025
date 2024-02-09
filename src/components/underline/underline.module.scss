@@ -1,0 +1,12 @@
+@use "../../styles/colors/colors.scss";
+@use "../../styles/fonts/fonts.scss";
+@use "../../styles/spacing/spacing.scss";
+
+.underline {
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    color: colors.$footer-li-color-hover;
+  }
+}

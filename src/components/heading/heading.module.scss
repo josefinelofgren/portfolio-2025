@@ -1,0 +1,47 @@
+@use "../../styles/colors/colors.scss";
+@use "../../styles/fonts/fonts.scss";
+@use "../../styles/spacing/spacing.scss";
+
+.heading--project-subtitle {
+  font-weight: fonts.$font-weight-semibold;
+  margin-bottom: spacing.$medium;
+}
+
+.heading--quote {
+  color: colors.$text-color-secondary;
+  font-weight: fonts.$font-weight-regular;
+}
+
+.heading--bold {
+  font-weight: fonts.$font-weight-semibold;
+}
+
+.heading--margin-bottom {
+  margin-bottom: spacing.$large;
+}
+
+.heading--about-subtitle {
+  margin-bottom: spacing.$small;
+  font-weight: fonts.$font-weight-bold;
+}
+
+.heading--about-description {
+  color: #707070;
+}
+
+.heading--about-school,
+.heading--about-company {
+  color: colors.$whiteOpacity !important;
+  font-weight: fonts.$font-weight-semibold;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+}
+
+.heading--about-description,
+.heading--about-title {
+  margin-bottom: spacing.$large;
+}
+
+.heading--secondary {
+  margin-bottom: spacing.$large;
+}

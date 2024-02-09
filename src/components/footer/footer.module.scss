@@ -1,0 +1,52 @@
+@use "../../styles/colors/colors.scss";
+@use "../../styles/fonts/fonts.scss";
+@use "../../styles/spacing/spacing.scss";
+
+.footer {
+  .footer-content {
+    max-width: 600px;
+    position: relative;
+  }
+
+  a {
+    color: colors.$text-color-primary;
+
+    &:hover {
+      color: colors.$pink;
+    }
+  }
+
+  .contact-info {
+    display: inline-block !important;
+    width: max-content;
+    margin-bottom: spacing.$medium;
+    color: colors.$pink;
+    font-weight: fonts.$font-weight-semibold;
+    position: relative;
+    margin-right: spacing.$medium;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background-color: colors.$pink;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+
+    &:hover {
+      color: colors.$pink;
+    }
+  }
+
+  .copyright {
+    color: colors.$text-color-tertiary;
+    font-size: fonts.$footer-copyright-font-size;
+  }
+}

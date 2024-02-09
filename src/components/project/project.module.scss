@@ -1,0 +1,73 @@
+@use "../../styles/colors/colors.scss";
+@use "../../styles/fonts/fonts.scss";
+@use "../../styles/spacing/spacing.scss";
+
+.project-header {
+  color: colors.$text-color-primary-inverted;
+
+  figure {
+    background-color: transparent !important;
+  }
+
+  h1,
+  p,
+  h4 {
+    color: colors.$text-color-primary-inverted !important;
+  }
+
+  h4 {
+    font-weight: 300;
+  }
+
+  .header-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-content {
+    vertical-align: middle;
+  }
+}
+
+.final-section {
+  background-color: colors.$bg-secondary;
+}
+
+.challenge {
+  color: colors.$almostWhite;
+
+  .container-fluid {
+    border-radius: spacing.$extraSmall;
+  }
+
+  p,
+  h4,
+  h3 {
+    color: colors.$text-color-primary-inverted !important;
+  }
+}
+
+.project {
+  figure {
+    border-radius: spacing.$extraSmall;
+    background-color: colors.$lightGrey;
+
+    img {
+      border-radius: spacing.$extraSmall;
+    }
+
+    &.prototype {
+      background-color: colors.$lightGrey;
+    }
+  }
+
+  a {
+    color: colors.$text-color-primary;
+
+    &:hover {
+      color: colors.$text-color-secondary;
+    }
+  }
+}

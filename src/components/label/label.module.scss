@@ -1,0 +1,14 @@
+@use "../../styles/colors/colors.scss";
+@use "../../styles/fonts/fonts.scss";
+@use "../../styles/spacing/spacing.scss";
+
+label {
+  text-transform: uppercase;
+  color: colors.$almostBlack;
+  background-color: colors.$lightGrey;
+  font-weight: fonts.$font-weight-regular;
+  padding: 15px spacing.$medium spacing.$small spacing.$medium;
+  margin: 0 spacing.$small spacing.$small 0;
+  font-size: fonts.$label-font-size;
+  border-radius: spacing.$extraSmall;
+}
