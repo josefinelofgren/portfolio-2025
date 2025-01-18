@@ -1,64 +1,37 @@
 // import libaries
-import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
 // import pages
 import Home from "./pages/home";
-import DogFriendly from "./pages/portfolio/dogfriendy";
-import HundSokerHem from "./pages/portfolio/hundsokerhem";
-import BokaMote from "./pages/portfolio/bokamote";
-import Calendar from "./pages/portfolio/calendar";
-import About from "./pages/about";
 
 // import components
-import Navbar from "./components/navigation/navbar";
-import Sidebar from "./components/navigation/sidebar";
 import Footer from "./components/footer/footer";
-import { getWindowDimensions } from "./components/window-dimensions/window-dimensions";
+import Header from "./components/header/header";
+import { useEffect, useState } from "react";
+import Menu from "./components/menu/menu";
+import About from "./pages/about";
+import Work from "./pages/work";
 
 function App() {
-  // show or hide sidebar
-  const [sidebar, setSidebar] = useState(false);
-  const toggleSidebar = () => {
-    setSidebar(!sidebar);
-  };
-
-  // get window dimensions
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation()
 
   useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <div className="App">
-      <Router>
-        <Navbar
-          sidebar={sidebar}
-          toggleSidebar={toggleSidebar}
-          windowDimensions={windowDimensions}
-        />
-        <Sidebar sidebar={sidebar} toggleSidebar={toggleSidebar} />
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <div className="relative flex min-h-screen flex-col items-center justify-between">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/portfolio/dog-friendly" element={<DogFriendly />} />
-          <Route path="/portfolio/hund-soker-hem" element={<HundSokerHem />} />
-          <Route path="/portfolio/boka-mote" element={<BokaMote />} />
-          <Route path="/portfolio/calendar" element={<Calendar />} />
-          <Route
-            path="/about"
-            element={<About windowDimensions={windowDimensions} />}
-          />
+          <Route path="/about" element={<About />} />
+          <Route path="/work/:subPath" element={<Work />} />
         </Routes>
-        <Footer />
-      </Router>
+      </div>
+      <Footer />
     </div>
   );
 }

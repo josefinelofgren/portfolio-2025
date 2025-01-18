@@ -1,0 +1,83 @@
+/* Load Tailwind first */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFFFF;
+}
+
+@font-face {
+    font-family: 'FoundersGrotesk';
+    src: url('./fonts/FoundersGrotesk/FoundersGrotesk-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FoundersGrotesk';
+    src: url('./fonts/FoundersGrotesk/FoundersGrotesk-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FoundersGrotesk';
+    src: url('./fonts/FoundersGrotesk/FoundersGrotesk-Light.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DomaineText';
+    src: url('./fonts/DomaineText/DomaineText-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DomaineText';
+    src: url('./fonts/DomaineText/DomaineText-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DomaineText';
+    src: url('./fonts/DomaineText/DomaineText-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DomaineText';
+    src: url('./fonts/DomaineText/DomaineText-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DomaineText';
+    src: url('./fonts/DomaineText/DomaineText-Light.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DomaineText';
+    src: url('./fonts/DomaineText/DomaineText-RegularItalic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'DomaineText';
+    src: url('./fonts/DomaineText/DomaineText-LightItalic.otf') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+}

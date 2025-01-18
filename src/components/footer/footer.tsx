@@ -1,65 +1,34 @@
-import React from "react";
-import * as FaIcons from "react-icons/fa";
-import * as MdIcons from "react-icons/md";
-import { useTranslation } from "react-i18next";
-import { Container, Row } from "react-bootstrap";
-import { setUnderlinedText } from "../../utils/setUnderlinedText";
-import Heading from "../heading/heading";
+const Footer = () => {
 
-interface ContactDetails {
-  icon: JSX.Element;
-  text: string;
-  src: string;
-}
-
-const Footer: React.FC = () => {
-  const { t } = useTranslation("translations", { keyPrefix: "footer" });
-
-  const contactDetails: ContactDetails[] = [
-    {
-      icon: <FaIcons.FaLinkedinIn />,
-      text: "LinkedIn",
-      src: "https://www.linkedin.com/in/josefinelofgren/",
-    },
-    {
-      icon: <MdIcons.MdPhoneIphone />,
-      text: "+46 76 79 88 105",
-      src: "tel:+46767988105",
-    },
-  ];
-
-  return (
-    <div id="footer" className="footer">
-      <Container fluid>
-        <Row>
-          <div className="footer-container">
-            <div className="footer-content">
-              <Heading
-                element="h1"
-                variant="bold"
-                text={setUnderlinedText({
-                  text: t("title"),
-                  underline: t("underline"),
-                  src: "mailto:josefine.lofgren@live.se",
-                })}
-              />
-              {contactDetails.map((item, index) => (
-                <a
-                  key={index}
-                  className="contact-info"
-                  target="_blank"
-                  href={item.src}
-                  rel="noreferrer"
-                >
-                  {item.text}
-                </a>
-              ))}
+    return (
+        <footer
+            id="footer"
+            className="bg-white footer p-6 md:p-12 lg:p-24 justify-center  pt-24 pb-24 md:pt-24 md:pb-24 "
+        >
+            <div className="flex flex-col lg:flex-row lg:gap-[20%]">
+                <div className=" mb-8">
+                    <h3 className="relative max-w-2xl">This is the part where you <a className="no-underline" href="mailto:josefine.lofgren@live.se">reach out</a> to schedule a chat over some coffee</h3>
+                </div>
+                <div className="mb-24 flex flex-row lg:flex-col gap-12">
+                    <div>
+                        <p className="paragraph-small md:paragraph">www.josefinelofgren.se</p>
+                        <p className="paragraph-small md:paragraph">josefine.lofgren@live.se</p>
+                        <p className="paragraph-small md:paragraph">(+46) 76 79 88 105</p>
+                    </div>
+                    <div>
+                        <p className="paragraph-small md:paragraph">
+                            <a href="https://www.linkedin.com/in/josefinelofgren/">LinkedIn</a>
+                        </p>
+                        <p className="paragraph-small md:paragraph">
+                            <a href="https://github.com/josefinelofgren">Github</a>
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </Row>
-      </Container>
-    </div>
-  );
+            <p className="paragraph-xsmall md:paragraph-small">Website designed my <span className="underline">me</span> and developed by <span className="underline">me</span>.</p>
+            <p className="paragraph-xsmall md:paragraph-small">© 2025 all rights reserved.</p>
+        </footer >
+    );
 };
 
 export default Footer;

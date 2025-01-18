@@ -1,26 +1,16 @@
-import { FC, ReactElement } from "react";
+"use client";
 
-interface ButtonProps {
-  text: string;
-  element: keyof JSX.IntrinsicElements;
-  variant?: string;
-  onClick: any;
+interface Props {
+    text: string;
 }
 
-const Button: FC<ButtonProps> = ({
-  text,
-  element,
-  variant,
-  ...props
-}): ReactElement => {
-  const Element = element;
-  const classes = variant ? ` button--${variant}` : "";
+const Button = ({ text }: Props) => {
 
-  return (
-    <Element className={`${"button"} ${classes}`} {...props}>
-      {text}
-    </Element>
-  );
+    return (
+        <div className="button bg-lightGrey text-black pt-4 pb-4 pr-8 pl-8 rounded-full cursor-pointer hover:opacity-50 transition duration-300 mt-6">
+            {text}
+        </div>
+    );
 };
 
 export default Button;

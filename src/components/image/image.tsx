@@ -1,49 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-interface ImageProps {
-  src: string;
-  width?: number;
-  height?: number;
-  alt: string;
-  click?: () => void;
-  pattern?: string;
-  bgColor?: string;
+interface Props {
+    src: string;
+    alt: string;
 }
 
-const Image: React.FC<ImageProps> = ({
-  src,
-  width,
-  height,
-  alt,
-  click,
-  pattern,
-  bgColor,
-  ...props
-}) => {
-  const classes = pattern ? ` image--${pattern}` : "";
+const Image = ({
+    src,
+    alt,
+}: Props) => {
 
-  return (
-    <div className={`${"image"} ${classes}`} {...props}>
-      {pattern && <img src={pattern} alt={alt} className={"image__pattern"} />}
-      <picture>
-        <source
-          media="(min-width: 640px)"
-          width={width}
-          height={height}
-          srcSet={src}
-        />
+    const [imageVisible, setImageVisible] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setImageVisible(true);
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+
+    return (
         <img
-          className={"image__object"}
-          src={src}
-          alt={alt}
-          onClick={click}
-          loading="lazy"
-          decoding="async"
-          style={{ backgroundColor: bgColor }}
+            className={`transition-opacity duration-500 ease-out ${imageVisible ? "opacity-100" : "opacity-0"
+                }`}
+            src={src}
+            alt={alt}
+            loading="lazy"
+            decoding="async"
         />
-      </picture>
-    </div>
-  );
+    );
 };
 
 export default Image;
